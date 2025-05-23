@@ -6,7 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.growup.R;
+import com.example.growup.data.model.Course;
 
 public class CourseDetailFragment extends Fragment {
     private TextView titleText, contentText, dateText;
@@ -25,7 +28,7 @@ public class CourseDetailFragment extends Fragment {
             Course course = (Course) getArguments().getSerializable("course");
             if (course != null) {
                 titleText.setText(course.getTitle());
-                contentText.setText(course.getContent());
+                contentText.setText(course.getDescription());
                 dateText.setText(course.getCreation());
             }
         }

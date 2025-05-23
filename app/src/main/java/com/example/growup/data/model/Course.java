@@ -1,14 +1,18 @@
 package com.example.growup.data.model;
 
 
+import java.io.Serializable;
 
-public class Course {
+public class Course implements Serializable {
     private int id;
     private String title;
-    private String description;
+    private String content;
+    private String slug;
+    private boolean available;
+    private String creation;
+    private String update;
     private String imageUrl;
 
-    // Construtor vazio necessário para o Retrofit/Gson
     public Course() {}
 
     // Getters e Setters
@@ -18,8 +22,11 @@ public class Course {
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public String getDescription() { return content; }
+    public void setDescription(String description) { this.content = description; }
+
+    public String getCreation() { return creation; }
+    public void setCreation(String creation) { this.creation = creation; }
 
     public String getImageUrl() { return imageUrl; }
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }

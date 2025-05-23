@@ -48,5 +48,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             super(itemView);
             title = itemView.findViewById(R.id.courseTitle);
         }
+
+        public interface OnCourseClickListener {
+            void onCourseClick(Course course);
+        }
+
     }
 }
