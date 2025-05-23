@@ -1,6 +1,7 @@
-package com.example.growup.data.model;
+package com.example.growup.ui.auth;
 import  com.example.growup.utils.SessionManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +29,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+//        Toast.makeText(this, "testes", Toast.LENGTH_SHORT).show();
+
+
         nameInput = findViewById(R.id.nameInput);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
@@ -37,7 +41,9 @@ public class RegisterActivity extends AppCompatActivity {
         loginButton.setOnClickListener(v -> register());
         registerText.setOnClickListener(v -> {
 
-            finish(); // ou startActivity(new Intent(this, LoginActivity.class));
+            finish();
+//            startActivity(new Intent(this, LoginActivity.class));
+
         });
     }
 
@@ -58,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     new SessionManager(RegisterActivity.this).saveToken(response.body().getAccess());
                     Toast.makeText(RegisterActivity.this, "Registro concluído!", Toast.LENGTH_SHORT).show();
-                    finish(); // ou vá para tela principal
+                    finish();
                 } else {
                     Toast.makeText(RegisterActivity.this, "Erro ao registrar", Toast.LENGTH_SHORT).show();
                 }

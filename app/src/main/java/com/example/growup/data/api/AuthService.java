@@ -9,7 +9,7 @@ public interface AuthService {
     @POST("login/")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
 
-    @POST("/register/")
+    @POST("register/")
     Call<LoginResponse> register(@Body RegisterRequest request);
 
 }
