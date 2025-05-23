@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/courseListFragment">
+
+    <fragment
+        android:id="@+id/courseListFragment"
+        android:name="com.example.growup.ui.course.CourseListFragment"
+        android:label="Cursos"
+        tools:layout="@layout/course_fragment_list" />
+
+    <fragment
+        android:id="@+id/savedCoursesFragment"
+        android:name="com.example.growup.ui.saved.SavedCoursesFragment"
+        android:label="Salvos"
+        tools:layout="@layout/fragment_saved_courses" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.growup.ui.profile.ProfileFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
