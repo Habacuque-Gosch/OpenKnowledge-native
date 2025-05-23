@@ -22,8 +22,8 @@ public class AuthRepository {
         return authService.login(loginRequest);
     }
 
-    public Call<RegisterRequest> register(String name, String email, String password) {
-        return authService.register(new RegisterRequest(name, email, password));
+    public Call<LoginResponse> register(String name, String email, String password) {
+        RegisterRequest registerRequest = new RegisterRequest(name, email, password);
+        return authService.register(registerRequest);
     }
-
 }

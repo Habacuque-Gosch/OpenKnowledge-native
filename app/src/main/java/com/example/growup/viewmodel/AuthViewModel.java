@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 //import androidx.lifecycle.ViewModel;
 
 import com.example.growup.data.api.LoginResponse;
-import com.example.growup.data.api.RegisterRequest;
+//import com.example.growup.data.api.RegisterRequest;
 import com.example.growup.data.repository.AuthRepository;
 import com.example.growup.utils.SessionManager;
 
@@ -48,11 +48,12 @@ public class AuthViewModel extends ViewModel {
             }
         });
     }
+
     public void register(Context context, String name, String email, String password) {
         AuthRepository repo = new AuthRepository(context);
-        repo.register(name, email, password).enqueue(new Callback<RegisterRequest>() {
+        repo.register(name, email, password).enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<RegisterRequest> call, Response<RegisterRequest> response) {
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     new SessionManager(context).saveToken(response.body().getAccess());
                     registerSuccess.setValue(true);
@@ -62,9 +63,10 @@ public class AuthViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(Call<RegisterRequest> call, Throwable t) {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
                 registerSuccess.setValue(false);
             }
         });
-    };
+    }
+
 }
