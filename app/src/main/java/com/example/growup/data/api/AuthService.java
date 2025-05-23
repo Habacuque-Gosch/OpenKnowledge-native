@@ -8,4 +8,8 @@ public interface AuthService {
 
     @POST("login/")
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
+
+    @POST("/register/")
+    Call<RegisterRequest> register(@Body RegisterRequest request);
+
 }
