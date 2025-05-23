@@ -23,7 +23,13 @@ public class ApiClient {
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
+
         }
         return retrofit;
     }
+
+    public static CoursesService getCoursesService(Context context) {
+        return getClient(context).create(CoursesService.class);
+    }
+
 }

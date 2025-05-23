@@ -26,8 +26,12 @@
             </intent-filter>
         </activity>
 
+        <!-- Auth Activity -->
         <activity android:name=".ui.auth.RegisterActivity" />
         <activity android:name=".ui.auth.LoginActivity" />
+
+        <!-- Courses -->
+        <activity android:name=".ui.course.IndexCoursesActivity" />
 
 
     </application>

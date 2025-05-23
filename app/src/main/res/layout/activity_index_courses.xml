@@ -5,56 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/loginLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:layout_margin="24dp"
-        android:background="@android:color/white"
-        android:elevation="4dp"
-        android:layout_gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/emailInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+<!--    <LinearLayout-->
+<!--        android:id="@+id/loginLayout"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="24dp"-->
+<!--        android:layout_margin="24dp"-->
+<!--        android:background="@android:color/white"-->
+<!--        android:elevation="4dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
 
-        <EditText
-            android:id="@+id/passwordInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Senha"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
-
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Criar conta"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
-
-        <TextView
-            android:id="@+id/registerText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Criar conta"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

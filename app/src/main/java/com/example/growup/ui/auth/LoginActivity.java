@@ -11,9 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.growup.MainActivity;
 import com.example.growup.R;
-import com.example.growup.data.api.LoginRequest;
+//import com.example.growup.data.api.LoginRequest;
 import com.example.growup.data.api.LoginResponse;
 import com.example.growup.data.repository.AuthRepository;
+import com.example.growup.ui.course.IndexCoursesActivity;
 import com.example.growup.utils.SessionManager;
 
 import org.json.JSONException;
@@ -68,14 +69,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     new SessionManager(LoginActivity.this).saveToken(response.body().getAccess());
                     Toast.makeText(LoginActivity.this, "Login concluído!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, IndexCoursesActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
-//                    String errorBody = response.errorBody().string();
-//                    JSONObject jsonObject = new JSONObject(errorBody);
-//                    String errorMessage = jsonObject.getString("detail");
-//                    Toast.makeText(LoginActivity.this, "Erro ao entrar: a " + errorMessage, Toast.LENGTH_SHORT).show();
                     try {
                         if (response.errorBody() != null) {
                             String errorBody = response.errorBody().string();
