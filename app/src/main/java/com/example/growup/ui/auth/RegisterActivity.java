@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText nameInput, emailInput, passwordInput;
-    private Button loginButton;
+    private Button registerButton;
     private TextView registerText;
 
     @Override
@@ -35,14 +35,14 @@ public class RegisterActivity extends AppCompatActivity {
         nameInput = findViewById(R.id.nameInput);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
-        loginButton = findViewById(R.id.loginButton);
+        registerButton = findViewById(R.id.registerButton);
         registerText = findViewById(R.id.registerText);
 
-        loginButton.setOnClickListener(v -> register());
+        registerButton.setOnClickListener(v -> register());
         registerText.setOnClickListener(v -> {
 
             finish();
-//            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
 
         });
     }
