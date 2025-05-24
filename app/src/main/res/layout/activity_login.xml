@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_midnightblack"
+    android:background="@color/primary_black"
     android:padding="24dp">
 
     <!-- Logo -->
@@ -13,10 +13,24 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_logo"
-        app:layout_constraintBottom_toTopOf="@id/tvSlogan"
+        app:layout_constraintBottom_toTopOf="@id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Você por aqui?"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textFontWeight="900"
+        app:layout_constraintVertical_chainStyle="packed"/>
 
     <!-- Slogan -->
     <TextView
@@ -25,11 +39,12 @@
         android:layout_height="wrap_content"
         android:text="Descubra lugares incríveis pra curtir do seu jeito. Personalize, escolha e vá viver histórias."
         android:textColor="@color/white"
+        android:textColorHint="@color/primary_midnightblack"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintVertical_chainStyle="packed"/>
 
     <!-- Email -->
@@ -39,20 +54,21 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Email"
-        app:boxBackgroundMode="filled"
         app:layout_constraintTop_toBottomOf="@id/tvSlogan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/passwordLayout"
-        android:layout_marginBottom="16dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Senha -->

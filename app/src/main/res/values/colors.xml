@@ -8,6 +8,8 @@
     <color name="primary_black">#22262d</color>
     <color name="primary_midnightblack">#272c35</color>
 
+    <color name="grays_colors">#CEDAF1</color>
+
     <color name="form_label">#22262d</color>
     <color name="form_background">#ffffff</color>
     <color name="form_border">#005ddf</color>
