@@ -65,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
                     new SessionManager(RegisterActivity.this).saveToken(response.body().getAccess());
                     Toast.makeText(RegisterActivity.this, "Registro concluído!", Toast.LENGTH_SHORT).show();
                     finish();
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 } else {
                     Toast.makeText(RegisterActivity.this, "Erro ao registrar", Toast.LENGTH_SHORT).show();
                 }

@@ -15,12 +15,12 @@
         android:id="@+id/savedCoursesFragment"
         android:name="com.example.growup.ui.saved.SavedCoursesFragment"
         android:label="Salvos"
-        tools:layout="@layout/fragment_saved_courses" />
+        tools:layout="@layout/course_fragment_saved" />
 
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.growup.ui.profile.ProfileFragment"
         android:label="Perfil"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/profile_fragment" />
 
 </navigation>

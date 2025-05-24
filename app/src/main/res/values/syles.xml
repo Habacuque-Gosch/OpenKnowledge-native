@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Label (TextView acima dos campos) -->
+    <style name="FormLabel">
+        <item name="android:textColor">@color/form_label</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <!-- Campo de texto base -->
+    <style name="FormField">
+        <item name="android:background">@drawable/form_field_background</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/primary_black</item>
+        <item name="android:textColorHint">@color/primary_midnightblack</item>
+    </style>
+
+    <!-- Botão padrão -->
+    <style name="FormButton">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
