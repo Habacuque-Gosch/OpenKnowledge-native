@@ -10,6 +10,6 @@ public interface AuthService {
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
 
     @POST("register/")
-    Call<LoginResponse> register(@Body RegisterRequest request);
+    Call<RegisterResponse> register(@Body RegisterRequest request);
 
 }

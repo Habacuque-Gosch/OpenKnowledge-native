@@ -1,5 +1,7 @@
 package com.example.growup.data.api;
 
+import androidx.annotation.NonNull;
+
 import com.example.growup.utils.SessionManager;
 
 import java.io.IOException;
@@ -15,17 +17,24 @@ public class AuthInterceptor implements Interceptor {
         this.sessionManager = sessionManager;
     }
 
+    @NonNull
     @Override
-    public Response intercept(Chain chain) throws IOException {
-        Request request = chain.request();
-        String token = sessionManager.getToken();
+    public Response intercept(@NonNull Chain chain) throws IOException {
+        Request originalRequest = chain.request();
+        String url = originalRequest.url().toString();
 
-        if (token != null && !token.isEmpty()) {
-            request = request.newBuilder()
-                    .addHeader("Authorization", "Bearer " + token)
-                    .build();
+        if (url.contains("/login") || url.contains("/register")) {
+            return chain.proceed(originalRequest);
         }
 
-        return chain.proceed(request);
+        String token = sessionManager.getToken();
+        if (token != null && !token.isEmpty()) {
+            Request newRequest = originalRequest.newBuilder()
+                    .addHeader("Authorization", "Bearer " + token)
+                    .build();
+            return chain.proceed(newRequest);
+        }
+
+        return chain.proceed(originalRequest);
     }
 }

@@ -7,6 +7,7 @@ import com.example.growup.data.api.AuthService;
 import com.example.growup.data.api.LoginRequest;
 import com.example.growup.data.api.LoginResponse;
 import com.example.growup.data.api.RegisterRequest;
+import com.example.growup.data.api.RegisterResponse;
 
 import retrofit2.Call;
 
@@ -22,7 +23,7 @@ public class AuthRepository {
         return authService.login(loginRequest);
     }
 
-    public Call<LoginResponse> register(String name, String email, String password) {
+    public Call<RegisterResponse> register(String name, String email, String password) {
         RegisterRequest registerRequest = new RegisterRequest(name, email, password);
         return authService.register(registerRequest);
     }

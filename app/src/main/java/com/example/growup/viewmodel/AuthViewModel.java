@@ -1,6 +1,7 @@
 package com.example.growup.viewmodel;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.growup.data.api.LoginResponse;
 //import com.example.growup.data.api.RegisterRequest;
+import com.example.growup.data.api.RegisterResponse;
 import com.example.growup.data.repository.AuthRepository;
 import com.example.growup.utils.SessionManager;
 
@@ -51,11 +53,12 @@ public class AuthViewModel extends ViewModel {
 
     public void register(Context context, String name, String email, String password) {
         AuthRepository repo = new AuthRepository(context);
-        repo.register(name, email, password).enqueue(new Callback<LoginResponse>() {
+        repo.register(name, email, password).enqueue(new Callback<RegisterResponse>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    new SessionManager(context).saveToken(response.body().getAccess());
+                    Log.d("Register", "Mensagem: " + response.body().getMessage());
+
                     registerSuccess.setValue(true);
                 } else {
                     registerSuccess.setValue(false);
@@ -63,10 +66,11 @@ public class AuthViewModel extends ViewModel {
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
+            public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 registerSuccess.setValue(false);
             }
         });
     }
+
 
 }
