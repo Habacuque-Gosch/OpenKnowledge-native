@@ -9,18 +9,38 @@
     </style>
 
     <!-- Campo de texto base -->
-    <style name="FormField">
+    <style name="FormField" parent="Widget.Material3.TextInputEditText.FilledBox">
         <item name="android:background">@drawable/form_field_background</item>
         <item name="android:padding">12dp</item>
         <item name="android:textColor">@color/primary_black</item>
         <item name="android:textColorHint">@color/primary_midnightblack</item>
     </style>
 
-    <!-- Botão padrão -->
-    <style name="FormButton">
-        <item name="android:background">@drawable/button_background</item>
+    <!-- Botão azul sólido -->
+    <style name="FormButton" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/white</item>
-        <item name="android:padding">12dp</item>
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="android:height">60dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Botão branco (inverso) -->
+    <style name="FormButtonWhite" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:height">60dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Botão com borda azul -->
+    <style name="FormButtonOutline" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="strokeColor">@color/white</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:height">60dp</item>
         <item name="android:textStyle">bold</item>
     </style>
 

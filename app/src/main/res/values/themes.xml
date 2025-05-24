@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Growup" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/primary_black</item>
-        <item name="colorPrimary">@color/primary_blue</item>
-        <item name="colorSecondary">@color/primary_black</item>
+<!--        <item name="colorPrimary">@color/primary_blue</item>-->
+<!--        <item name="colorSecondary">@color/primary_black</item>-->
     </style>
 
     <style name="Theme.Growup" parent="Base.Theme.Growup" />
