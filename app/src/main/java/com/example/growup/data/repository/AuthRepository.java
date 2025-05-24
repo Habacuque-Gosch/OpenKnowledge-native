@@ -6,6 +6,8 @@ import com.example.growup.data.api.ApiClient;
 import com.example.growup.data.api.AuthService;
 import com.example.growup.data.api.LoginRequest;
 import com.example.growup.data.api.LoginResponse;
+import com.example.growup.data.api.RefreshRequest;
+import com.example.growup.data.api.TokenResponse;
 import com.example.growup.data.api.RegisterRequest;
 import com.example.growup.data.api.RegisterResponse;
 
@@ -27,4 +29,10 @@ public class AuthRepository {
         RegisterRequest registerRequest = new RegisterRequest(name, email, password);
         return authService.register(registerRequest);
     }
+
+    public Call<TokenResponse> refreshtoken(String refresh) {
+        RefreshRequest refreshRequest = new RefreshRequest(refresh);
+        return authService.refreshtoken(refreshRequest);
+    }
+
 }

@@ -9,9 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.growup.MainActivity;
 import com.example.growup.R;
-//import com.example.growup.data.api.LoginRequest;
 import com.example.growup.data.api.LoginResponse;
 import com.example.growup.data.repository.AuthRepository;
 import com.example.growup.ui.course.IndexCoursesActivity;
@@ -68,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     new SessionManager(LoginActivity.this).saveToken(response.body().getAccess());
+                    new SessionManager(LoginActivity.this).saveRefreshToken(response.body().getRefresh());
                     Toast.makeText(LoginActivity.this, "Login concluído!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, IndexCoursesActivity.class);
                     startActivity(intent);
