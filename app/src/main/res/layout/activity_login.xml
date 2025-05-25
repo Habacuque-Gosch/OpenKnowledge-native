@@ -10,24 +10,24 @@
     <!-- Logo -->
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:src="@drawable/ic_logo"
         app:layout_constraintBottom_toTopOf="@id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"/>
-
+        android:layout_marginTop="20dp"/>
+    <!--  Title  -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Você por aqui?"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintTop_toBottomOf="@id/imgLogo"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/roboto_bold"
         android:textFontWeight="900"
         app:layout_constraintVertical_chainStyle="packed"/>
@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/passwordLayout"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintVertical_chainStyle="packed">
 
@@ -98,11 +98,12 @@
             android:textColorHint="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Botão Criar Conta -->
+    <!-- Botão Entrar -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
         style="@style/FormButton"
         android:text="Entrar"
+        android:textSize="18sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/passwordLayout"
@@ -110,17 +111,60 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp"/>
 
+    <!-- Texto Esqueci minha senha -->
+    <TextView
+        android:id="@+id/forgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esqueci minha senha"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Botão Login Social Google -->
+    <com.google.android.material.button.MaterialButton
+        style="@style/FormButtonDisabled"
+        android:id="@+id/loginSocialGoogle"
+        android:text="Continuar com Google"
+        android:textSize="18sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_google"
+        app:layout_constraintTop_toBottomOf="@id/forgetPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Botão Login Social Apple -->
+    <com.google.android.material.button.MaterialButton
+        style="@style/FormButtonDisabled"
+        android:id="@+id/loginSocialApple"
+        android:text="Continuar com Apple"
+        android:textSize="18sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_apple"
+        app:layout_constraintTop_toBottomOf="@id/loginSocialGoogle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
     <!-- Texto Entrar -->
     <TextView
         android:id="@+id/registerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Não tem uma conta? Criar"
+        android:text="Quero criar minha conta! Registrar"
         android:textColor="@android:color/holo_blue_light"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/loginSocialApple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="1dp"/>
+        android:layout_marginTop="40dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
