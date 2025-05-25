@@ -3,6 +3,11 @@ plugins {
 }
 
 android {
+
+    buildFeatures {
+        buildConfig = true
+    }
+
     namespace = "com.example.growup"
     compileSdk = 35
 

@@ -13,6 +13,7 @@ import com.example.growup.data.api.TokenResponse;
 import com.example.growup.data.repository.AuthRepository;
 import com.example.growup.ui.course.IndexCoursesActivity;
 import com.example.growup.utils.SessionManager;
+//import com.example.growup.utils.UpdateApk;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,18 +26,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        new UpdateApk(this).checkForUpdate();
+
         SessionManager sessionManager = new SessionManager(this);
         String refreshToken = sessionManager.getRefreshToken();
 
         if (refreshToken != null) {
             AuthRepository repo = new AuthRepository(this);
-            Log.d("REFRESH_TOKEN", "AREQ: ");
 
             repo.refreshtoken(refreshToken).enqueue(new Callback<TokenResponse>() {
 
                 @Override
                 public void onResponse(Call<TokenResponse> call, Response<TokenResponse> response) {
-                    Log.d("REFRESH_TOKEN", "REQ: ");
 
                     if (response.isSuccessful()) {
                         String newAccessToken = response.body().getAccess();

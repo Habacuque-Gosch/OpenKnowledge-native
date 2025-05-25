@@ -23,41 +23,45 @@
         <item name="boxStrokeColor">@color/primary_blue</item>
     </style>
 
-    <!-- Botão azul sólido -->
+    <!-- Botão Cinza -->
     <style name="FormButtonDisabled" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
         <item name="backgroundTint">@color/primary_midnightblack</item>
         <item name="android:height">60dp</item>
         <item name="cornerRadius">10dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Botão azul sólido -->
     <style name="FormButton" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
         <item name="backgroundTint">@color/primary_blue</item>
         <item name="android:height">60dp</item>
         <item name="cornerRadius">10dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Botão branco (inverso) -->
     <style name="FormButtonWhite" parent="Widget.Material3.Button">
         <item name="android:textColor">@color/primary_blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
         <item name="backgroundTint">@color/white</item>
         <item name="android:height">60dp</item>
         <item name="cornerRadius">10dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Botão com borda azul -->
     <style name="FormButtonOutline" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
         <item name="strokeColor">@color/white</item>
         <item name="strokeWidth">1dp</item>
         <item name="cornerRadius">10dp</item>
         <item name="android:height">60dp</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
