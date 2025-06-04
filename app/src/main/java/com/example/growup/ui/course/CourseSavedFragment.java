@@ -1,4 +1,4 @@
-package com.example.growup.ui.saved;
+package com.example.growup.ui.course;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.growup.R;
 
-public class SavedCoursesFragment extends Fragment {
+public class CourseSavedFragment extends Fragment {
 
-    public SavedCoursesFragment() {}
+    public CourseSavedFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.course_fragment_saved, container, false);
     }
 }
