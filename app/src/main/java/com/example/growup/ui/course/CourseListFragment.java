@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.growup.R;
-import com.example.growup.data.model.Course;
+import com.example.growup.data.model.course.Course;
 import com.example.growup.ui.course.adapter.CourseAdapter;
 import com.example.growup.viewmodel.CourseViewModel;
 

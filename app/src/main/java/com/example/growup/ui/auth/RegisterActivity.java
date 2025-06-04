@@ -1,6 +1,6 @@
 package com.example.growup.ui.auth;
-import com.example.growup.data.api.RegisterResponse;
-import  com.example.growup.utils.SessionManager;
+import com.example.growup.data.api.auth.RegisterResponse;
+//import com.machinetech.guiarme.utils.SessionManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.growup.R;
-import com.example.growup.data.api.LoginResponse;
 import com.example.growup.data.repository.AuthRepository;
 
 import java.io.IOException;
@@ -71,8 +70,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                     try {
                         String errormessage = response.errorBody().string();
-                        Log.e("RegisterError", "Erro ao registrar: " + errormessage);
-                        Toast.makeText(RegisterActivity.this, "Erro ao registrar: " + errormessage, Toast.LENGTH_SHORT).show();
+                        Log.e("RegisterError", "Erro ao registrar");
+                        Toast.makeText(RegisterActivity.this, "Erro ao registrar", Toast.LENGTH_SHORT).show();
                     } catch (IOException e) {
                         Toast.makeText(RegisterActivity.this, "Erro ao processar o erro", Toast.LENGTH_SHORT).show();
                     }

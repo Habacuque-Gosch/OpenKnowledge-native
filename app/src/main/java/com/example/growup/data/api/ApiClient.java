@@ -2,6 +2,9 @@ package com.example.growup.data.api;
 
 import android.content.Context;
 
+import com.example.growup.data.api.auth.AuthInterceptor;
+import com.example.growup.data.api.course.CoursesService;
+import com.example.growup.data.api.profile.ProfileService;
 import com.example.growup.utils.SessionManager;
 
 import okhttp3.OkHttpClient;
@@ -28,8 +31,16 @@ public class ApiClient {
         return retrofit;
     }
 
+    public static void reset() {
+        retrofit = null;
+    }
+
     public static CoursesService getCoursesService(Context context) {
         return getClient(context).create(CoursesService.class);
+    }
+
+    public static ProfileService getProfileService(Context context) {
+        return getClient(context).create(ProfileService.class);
     }
 
 }

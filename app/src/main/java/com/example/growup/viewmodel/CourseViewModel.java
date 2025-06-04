@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.growup.data.model.Course;
+import com.example.growup.data.model.course.Course;
 import com.example.growup.data.repository.CourseRepository;
 
 import java.util.List;

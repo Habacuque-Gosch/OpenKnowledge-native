@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_blue"
+    android:background="@color/primary_midnightblack"
     android:padding="24dp">
 
         <!-- Logo -->
@@ -61,7 +61,7 @@
             android:id="@+id/tvFooter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ao utilizar o GuiarMe, você concorda com nossos Termos de Serviço e Política de Privacidade."
+            android:text="Ao utilizar o Growup, você concorda com nossos Termos de Serviço e Política de Privacidade."
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textAlignment="center"

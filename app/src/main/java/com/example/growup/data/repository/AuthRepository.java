@@ -3,13 +3,13 @@ package com.example.growup.data.repository;
 import android.content.Context;
 
 import com.example.growup.data.api.ApiClient;
-import com.example.growup.data.api.AuthService;
-import com.example.growup.data.api.LoginRequest;
-import com.example.growup.data.api.LoginResponse;
-import com.example.growup.data.api.RefreshRequest;
-import com.example.growup.data.api.TokenResponse;
-import com.example.growup.data.api.RegisterRequest;
-import com.example.growup.data.api.RegisterResponse;
+import com.example.growup.data.api.auth.AuthService;
+import com.example.growup.data.api.auth.LoginRequest;
+import com.example.growup.data.api.auth.LoginResponse;
+import com.example.growup.data.api.auth.RefreshRequest;
+import com.example.growup.data.api.auth.TokenResponse;
+import com.example.growup.data.api.auth.RegisterRequest;
+import com.example.growup.data.api.auth.RegisterResponse;
 
 import retrofit2.Call;
 

@@ -3,9 +3,9 @@ package com.example.growup.data.repository;
 import android.content.Context;
 
 import com.example.growup.data.api.ApiClient;
-import com.example.growup.data.api.CoursesService;
-import com.example.growup.data.model.Course;
-import com.example.growup.data.model.CourseResponse;
+import com.example.growup.data.api.course.CoursesService;
+import com.example.growup.data.model.course.Course;
+import com.example.growup.data.model.course.CourseResponse;
 
 import java.util.List;
 

@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.growup.R;
-import com.example.growup.data.model.Course;
+import com.example.growup.data.model.course.Course;
 
 import java.util.List;
 

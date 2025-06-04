@@ -8,13 +8,25 @@
     <fragment
         android:id="@+id/courseListFragment"
         android:name="com.example.growup.ui.course.CourseListFragment"
-        android:label="Cursos"
-        tools:layout="@layout/course_fragment_list" />
+        android:label="Home"
+        tools:layout="@layout/destination_fragment_list" />
 
     <fragment
-        android:id="@+id/savedCoursesFragment"
-        android:name="com.example.growup.ui.saved.SavedCoursesFragment"
-        android:label="Salvos"
+        android:id="@+id/savedDestinationsFragment"
+        android:name="com.example.growup.ui.course.CourseListFragment"
+        android:label="Mapa"
+        tools:layout="@layout/course_fragment_saved" />
+
+    <fragment
+        android:id="@+id/roteirosFragment"
+        android:name="com.example.growup.ui.course.CourseSavedFragment"
+        android:label="Roteiros"
+        tools:layout="@layout/course_fragment_saved" />
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.example.growup.ui.course.CourseSavedFragment"
+        android:label="Eventos"
         tools:layout="@layout/course_fragment_saved" />
 
     <fragment

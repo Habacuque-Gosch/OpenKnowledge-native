@@ -1,4 +1,4 @@
-package com.example.growup.data.api;
+package com.example.growup.data.api.auth;
 
 import com.google.gson.annotations.SerializedName;
 

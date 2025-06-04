@@ -1,4 +1,4 @@
-package com.example.growup.data.model;
+package com.example.growup.data.model.course;
 
 import java.util.List;
 

@@ -6,11 +6,9 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-//import androidx.lifecycle.ViewModel;
 
-import com.example.growup.data.api.LoginResponse;
-//import com.example.growup.data.api.RegisterRequest;
-import com.example.growup.data.api.RegisterResponse;
+import com.example.growup.data.api.auth.LoginResponse;
+import com.example.growup.data.api.auth.RegisterResponse;
 import com.example.growup.data.repository.AuthRepository;
 import com.example.growup.utils.SessionManager;
 

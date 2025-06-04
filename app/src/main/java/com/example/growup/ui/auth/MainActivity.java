@@ -2,17 +2,19 @@ package com.example.growup.ui.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.growup.R;
-import com.example.growup.data.api.TokenResponse;
+import com.example.growup.data.api.ApiClient;
+import com.example.growup.data.api.auth.TokenResponse;
 import com.example.growup.data.repository.AuthRepository;
 import com.example.growup.ui.course.IndexCoursesActivity;
 import com.example.growup.utils.SessionManager;
+import com.example.growup.viewmodel.ProfileViewModel;
 //import com.example.growup.utils.UpdateApk;
 
 import retrofit2.Call;
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //        new UpdateApk(this).checkForUpdate();
-
+//
         SessionManager sessionManager = new SessionManager(this);
         String refreshToken = sessionManager.getRefreshToken();
 
@@ -42,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         String newAccessToken = response.body().getAccess();
                         sessionManager.saveToken(newAccessToken);
+                        ApiClient.reset();
+
+                        ProfileViewModel profileViewModel = new ViewModelProvider(
+                                MainActivity.this,
+                                new ViewModelProvider.AndroidViewModelFactory(getApplication())
+                        ).get(ProfileViewModel.class);
+
+                        profileViewModel.fetchProfile(MainActivity.this);
 
                         startActivity(new Intent(MainActivity.this, IndexCoursesActivity.class));
                         finish();

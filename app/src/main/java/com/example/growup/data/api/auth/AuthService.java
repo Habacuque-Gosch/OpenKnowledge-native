@@ -1,8 +1,9 @@
-package com.example.growup.data.api;
+package com.example.growup.data.api.auth;
+
+import com.example.growup.data.api.auth.RegisterResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface AuthService {

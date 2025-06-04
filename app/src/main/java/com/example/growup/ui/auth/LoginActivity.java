@@ -2,23 +2,22 @@ package com.example.growup.ui.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.growup.R;
-import com.example.growup.data.api.LoginResponse;
+import com.example.growup.data.api.ApiClient;
+import com.example.growup.data.api.auth.LoginResponse;
 import com.example.growup.data.repository.AuthRepository;
 import com.example.growup.ui.course.IndexCoursesActivity;
 import com.example.growup.utils.SessionManager;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
+import com.example.growup.viewmodel.ProfileViewModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,25 +64,33 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    new SessionManager(LoginActivity.this).saveToken(response.body().getAccess());
-                    new SessionManager(LoginActivity.this).saveRefreshToken(response.body().getRefresh());
-                    Toast.makeText(LoginActivity.this, "Login concluído!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, IndexCoursesActivity.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    try {
-                        if (response.errorBody() != null) {
-                            String errorBody = response.errorBody().string();
-                            JSONObject jsonObject = new JSONObject(errorBody);
-                            String errorMessage = jsonObject.getString("detail");
-                            Toast.makeText(LoginActivity.this, "Erro ao entrar: " + errorMessage, Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Erro desconhecido ao entrar", Toast.LENGTH_SHORT).show();
+                    SessionManager session = new SessionManager(LoginActivity.this);
+
+                    session.saveToken(response.body().getAccess());
+                    session.saveRefreshToken(response.body().getRefresh());
+                    ApiClient.reset();
+
+                    ProfileViewModel profileViewModel = new ViewModelProvider(
+                            LoginActivity.this,
+                            new ViewModelProvider.AndroidViewModelFactory(getApplication())
+                    ).get(ProfileViewModel.class);
+
+                    profileViewModel.fetchProfile(LoginActivity.this);
+                    profileViewModel.getProfile().observe(LoginActivity.this, profile -> {
+                        if (profile != null) {
+                            Toast.makeText(LoginActivity.this, "Login concluído!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, IndexCoursesActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
-                    } catch (IOException | JSONException e) {
-                        e.printStackTrace();
-                        Toast.makeText(LoginActivity.this, "Erro ao processar resposta de erro", Toast.LENGTH_SHORT).show();
+                    });
+
+                } else {
+
+                    if (response.code() == 401 || response.code() == 400) {
+                        Toast.makeText(LoginActivity.this, "E-mail ou senha inválidos", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Erro inesperado. Tente novamente.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
