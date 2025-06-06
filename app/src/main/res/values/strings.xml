@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">growup</string>
+    <string name="app_name">openknowledge</string>
     <string name="login" translatable="false">Entrar</string>
     <string name="email_hint" translatable="false">Email</string>
     <string name="password_hint" translatable="false">Senha</string>

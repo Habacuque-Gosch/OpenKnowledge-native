@@ -14,23 +14,35 @@
             android:layout_height="100dp"
             android:src="@drawable/ic_logo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tvSlogan"
+            app:layout_constraintBottom_toTopOf="@id/tvLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="250dp"/>
+
+        <TextView
+            android:id="@+id/tvLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OpenKnowledge"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintTop_toBottomOf="@id/imgLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"/>
 
         <!-- Slogan -->
         <TextView
             android:id="@+id/tvSlogan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encontre seu próximo destino perfeito."
+            android:text="Onde mentes evoluem, futuros emergem."
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/imgLogo"
+            app:layout_constraintTop_toBottomOf="@id/tvLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="5dp"/>
 
         <!-- Criar conta (branco) -->
         <com.google.android.material.button.MaterialButton
@@ -61,7 +73,7 @@
             android:id="@+id/tvFooter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ao utilizar o Growup, você concorda com nossos Termos de Serviço e Política de Privacidade."
+            android:text="Ao utilizar a OpenKnowledge, você concorda com nossos Termos de Serviço e Política de Privacidade."
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textAlignment="center"
